@@ -19,9 +19,11 @@ with UiBank(teardown=True) as bot:
     # bot.download_transactions()
     # bot.select_account_by_name("Vlad's Account")
     # bot.download_all_transactions()
-    bot.dispute_transaction()
+    # bot.automate_dispute_center_random_account()
+    # bot.automate_dispute_center_by_account_name("Vlad's Account")
+    bot.download_transactions_random_account()
 
-    time.sleep(3)
+    time.sleep(2)
 
 
 '''

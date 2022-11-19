@@ -10,8 +10,9 @@ import random
 import json
 import re
 import shutil
+import time
 
-from .additional_classes.account1 import Account
+from .additional_classes.account import Account, RandomAccount, AccountByName
 from .additional_classes.credit_card import CreditCard
 
 
@@ -185,30 +186,30 @@ class UiBank(webdriver.Chrome):
             '//*[@id="exampleModal"]/div/div/div[3]/button[2]'
         ).click()
 
-    def select_random_account(self):
+    def automate_dispute_center_random_account(self):
         self.navigate_to('Accounts')
-        account = Account(driver=self)
-        account.select_random_account()
+        random_account = RandomAccount(driver=self)
+        random_account.go_to_dispute_center()
+        random_account.go_to_current_disputes()
+        random_account.go_to_closed_disputes()
+        random_account.dispute_new_transaction()
 
-    def select_account_by_name(self, account_name):
+    def automate_dispute_center_by_account_name(self, account_name):
         self.navigate_to('Accounts')
-        account = Account(driver=self)
-        account.select_account_by_name(account_name=account_name)
+        account_by_name = AccountByName(driver=self, account_name=account_name)
+        account_by_name.go_to_dispute_center()
+        account_by_name.go_to_current_disputes()
+        account_by_name.go_to_closed_disputes()
+        account_by_name.dispute_new_transaction()
 
-    def download_all_transactions(self):
-        pass
-
-        # source = str(os.path.join(Path.home(), "Downloads"))
-        # destination = os.getcwd() + '/UiBank/outputs/transactions/'
-        # download_files = os.listdir(source)
-
-        # for f in download_files:
-        #     if 'transactionData' in str(f):
-        #         src_path = os.path.join(source, f)
-        #         dst_path = os.path.join(destination, f)
-        #         shutil.move(src_path, dst_path)
-
-    def dispute_transaction(self):
+    # TODO: download_button not clickable
+    def download_transactions_random_account(self):
         self.navigate_to('Accounts')
-        account = Account(driver=self)
-        account.dispute_transaction()
+        random_account = RandomAccount(driver=self)
+        random_account.download_transactions()
+
+    # TODO: download_button not clickable
+    def download_transactions_by_account_name(self, account_name):
+        self.navigate_to('Accounts')
+        account_by_name = AccountByName(driver=self, account_name=account_name)
+        account_by_name.download_transactions()
