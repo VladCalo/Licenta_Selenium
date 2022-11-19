@@ -1,0 +1,2 @@
+{"loan_id": "63779de108e33c665be7116d", "rate": "11% APR", "applicant_age": 21, "term": 1, "loan_amount": 93, "yearly_income": 10000},
+{"loan_id": "63779de208e33c665be7116e", "rate": "11% APR", "applicant_age": 21, "term": 1, "loan_amount": 93, "yearly_income": 10000}
