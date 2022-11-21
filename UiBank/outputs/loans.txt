@@ -1,3 +1,9 @@
 {"loan_id": "63779de108e33c665be7116d", "rate": "11% APR", "applicant_age": 21, "term": 1, "loan_amount": 93, "yearly_income": 10000},
 {"loan_id": "63779de208e33c665be7116e", "rate": "11% APR", "applicant_age": 21, "term": 1, "loan_amount": 93, "yearly_income": 10000},
-{"loan_id": "637a216b08e33c665be714c7", "rate": "11% APR", "applicant_age": 21, "term": 3, "loan_amount": 16, "yearly_income": 10000}
+{"loan_id": "637a216b08e33c665be714c7", "rate": "11% APR", "applicant_age": 21, "term": 3, "loan_amount": 16, "yearly_income": 10000},
+{"loan_id": "637b628208e33c665be7161e", "rate": "11% APR", "applicant_age": 21, "term": 10, "loan_amount": 37, "yearly_income": 10000},
+{"loan_id": "637b630f08e33c665be71620", "rate": "11% APR", "applicant_age": 21, "term": 5, "loan_amount": 81, "yearly_income": 10000},
+{"loan_id": "637b633e08e33c665be71622", "rate": "11% APR", "applicant_age": 21, "term": 3, "loan_amount": 15, "yearly_income": 10000},
+{"loan_id": "637b637c08e33c665be71624", "rate": "11% APR", "applicant_age": 21, "term": 5, "loan_amount": 99, "yearly_income": 10000},
+{"loan_id": "637b654a08e33c665be7162c", "rate": "11% APR", "applicant_age": 21, "term": 1, "loan_amount": 75, "yearly_income": 10000},
+{"loan_id": "637b66b408e33c665be71634", "rate": "11% APR", "applicant_age": 21, "term": 1, "loan_amount": 79, "yearly_income": 10000}

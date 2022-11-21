@@ -155,10 +155,15 @@ class UiBank(webdriver.Chrome):
         # card.method()
 
     def transfer_funds(self):
+        self.get(const.main_page)
         self.navigate_to()
+        # self.find_element(
+        #     By.XPATH,
+        #     '/html/body/app-root/body/div/app-accounts/div/div[2]/div/div[2]/div[1]/div[2]/a'
+        # ).click()
         self.find_element(
-            By.XPATH,
-            '/html/body/app-root/body/div/app-accounts/div/div[2]/div/div[2]/div[1]/div[2]/a'
+            By.LINK_TEXT,
+            'Transfer Funds'
         ).click()
 
         fromAccount = self.find_element(By.ID, 'fromAccount')
@@ -187,6 +192,7 @@ class UiBank(webdriver.Chrome):
         ).click()
 
     def automate_dispute_center_random_account(self):
+        self.get(const.main_page)
         self.navigate_to('Accounts')
         random_account = RandomAccount(driver=self)
         random_account.go_to_dispute_center()

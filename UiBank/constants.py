@@ -1,5 +1,6 @@
 import random
 
+main_page = 'https://uibank.uipath.com/home'
 BASE_URL = 'https://uibank.uipath.com/'
 username = 'VladCalo'
 password = 'parolavlad'
