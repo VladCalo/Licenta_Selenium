@@ -14,12 +14,12 @@ from .additional_classes.driver_classes import *
 
 class UiBank(ChromeDriver, FirefoxDriver, SafariDriver):
     def __init__(self, teardown=False, driverType=1):
-        if driverType == 1:
-            ChromeDriver.__init__(self)
-        elif driverType == 2:
-            FirefoxDriver.__init__(self)
-        elif driverType == 3:
-            SafariDriver.__init__(self)
+        # if driverType == 1:
+        #     ChromeDriver.__init__(self)
+        # elif driverType == 2:
+        #     FirefoxDriver.__init__(self)
+        # elif driverType == 3:
+        #     SafariDriver.__init__(self)
 
         self.teardown = teardown
         self.loans = []
