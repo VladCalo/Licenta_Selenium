@@ -1,30 +1,26 @@
+import json
 import os
+import random
+import re
 import string
-from pathlib import Path
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
-from . import constants as const
+from webdriver_manager.chrome import ChromeDriverManager
 from Task1.UiBank.additional_classes.main_page_navbar import MainPageNavbar
 from Task1.UiBank.additional_classes.products import Products
-import random
-import json
-import re
-import shutil
-import time
-
-from .additional_classes.account import Account, RandomAccount, AccountByName
+from . import constants as const
+from .additional_classes.account import RandomAccount, AccountByName
 from .additional_classes.credit_card import CreditCard
 
 
 class UiBank(webdriver.Chrome):
-    def __init__(self, driver_path=r'/usr/local/bin', teardown=False):
+    def __init__(self, teardown=False):
         self.teardown = teardown
-        self.driver_path = driver_path
-        os.environ['PATH'] += self.driver_path
+        self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
         options = webdriver.ChromeOptions()
         options.add_experimental_option("detach", True)
-
         super(UiBank, self).__init__(options=options)
 
         self.loans = []
