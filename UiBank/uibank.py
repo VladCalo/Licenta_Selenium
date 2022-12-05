@@ -12,16 +12,13 @@ from Task1.UiBank.additional_classes.products import Products
 from . import constants as const
 from .additional_classes.account import RandomAccount, AccountByName
 from .additional_classes.credit_card import CreditCard
+from .additional_classes.driver_classes import *
 
 
-class UiBank(webdriver.Chrome):
+class UiBank(ChromeDriver):
     def __init__(self, teardown=False):
+        ChromeDriver.__init__(self)
         self.teardown = teardown
-        self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-
-        options = webdriver.ChromeOptions()
-        options.add_experimental_option("detach", True)
-        super(UiBank, self).__init__(options=options)
 
         self.loans = []
         self.accounts = []

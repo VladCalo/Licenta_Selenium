@@ -33,3 +33,8 @@ for i in range(1, nr_of_scripts + 1):
     print(f'Running script{i}...')
     runpy.run_path(path_name=dir_path + f'/script{i}.py')
     time.sleep(3)
+
+
+
+
+
