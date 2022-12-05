@@ -5,6 +5,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from webdriver_manager.opera import OperaDriverManager
 
 
 class ChromeDriver(webdriver.Chrome):
@@ -24,4 +25,9 @@ class FirefoxDriver(webdriver.Firefox):
 class EdgeDriver(webdriver.Edge):
     def __init__(self):
         self.driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
+        super().__init__()
+
+
+class SafariDriver(webdriver.Safari):
+    def __init__(self):
         super().__init__()

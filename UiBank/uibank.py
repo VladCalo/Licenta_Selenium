@@ -3,10 +3,7 @@ import os
 import random
 import re
 import string
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 from Task1.UiBank.additional_classes.main_page_navbar import MainPageNavbar
 from Task1.UiBank.additional_classes.products import Products
 from . import constants as const
@@ -15,11 +12,16 @@ from .additional_classes.credit_card import CreditCard
 from .additional_classes.driver_classes import *
 
 
-class UiBank(ChromeDriver):
-    def __init__(self, teardown=False):
-        ChromeDriver.__init__(self)
-        self.teardown = teardown
+class UiBank(ChromeDriver, FirefoxDriver, SafariDriver):
+    def __init__(self, teardown=False, driverType=1):
+        if driverType == 1:
+            ChromeDriver.__init__(self)
+        elif driverType == 2:
+            FirefoxDriver.__init__(self)
+        elif driverType == 3:
+            SafariDriver.__init__(self)
 
+        self.teardown = teardown
         self.loans = []
         self.accounts = []
         self.implicitly_wait(15)
