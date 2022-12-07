@@ -11,7 +11,15 @@ class ChromeDriver(webdriver.Chrome):
     def __init__(self):
         self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         options = webdriver.ChromeOptions()
+        prefs = {
+            'download.default_directory': '/Users/vladcalomfirescu/Downloads',
+            "download.prompt_for_download": False,
+            "download.directory_upgrade": True,
+            "safebrowsing_for_trusted_sources_enabled": False,
+            "safebrowsing.enabled": False
+        }
         options.add_experimental_option("detach", True)
+        options.add_experimental_option('prefs', prefs)
         super().__init__(options=options)
 
 

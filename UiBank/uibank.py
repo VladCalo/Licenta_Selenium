@@ -12,16 +12,18 @@ from Task1.UiBank.additional_classes.products import Products
 from . import constants as const
 from .additional_classes.account import RandomAccount, AccountByName
 from .additional_classes.credit_card import CreditCard
+from .additional_classes.driver_classes import *
 
 
-class UiBank(webdriver.Chrome):
+class UiBank(ChromeDriver):
     def __init__(self, teardown=False):
+        super().__init__()
         self.teardown = teardown
-        self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
-        options = webdriver.ChromeOptions()
-        options.add_experimental_option("detach", True)
-        super(UiBank, self).__init__(options=options)
+        # self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+        # options = webdriver.ChromeOptions()
+        # options.add_experimental_option("detach", True)
+        # super(UiBank, self).__init__(options=options)
 
         self.loans = []
         self.accounts = []
@@ -188,21 +190,20 @@ class UiBank(webdriver.Chrome):
         ).click()
 
     def automate_dispute_center_random_account(self):
-        self.get(const.main_page)
         self.navigate_to('Accounts')
         random_account = RandomAccount(driver=self)
         random_account.go_to_dispute_center()
+        random_account.dispute_new_transaction()
         random_account.go_to_current_disputes()
         random_account.go_to_closed_disputes()
-        random_account.dispute_new_transaction()
 
     def automate_dispute_center_by_account_name(self, account_name):
         self.navigate_to('Accounts')
         account_by_name = AccountByName(driver=self, account_name=account_name)
         account_by_name.go_to_dispute_center()
+        account_by_name.dispute_new_transaction()
         account_by_name.go_to_current_disputes()
         account_by_name.go_to_closed_disputes()
-        account_by_name.dispute_new_transaction()
 
     # TODO: download_button not clickable
     def download_transactions_random_account(self):
