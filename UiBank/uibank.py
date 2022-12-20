@@ -7,8 +7,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-from Task1.UiBank.additional_classes.main_page_navbar import MainPageNavbar
-from Task1.UiBank.additional_classes.products import Products
+from UiBank.additional_classes.main_page_navbar import MainPageNavbar
+from UiBank.additional_classes.products import Products
 from . import constants as const
 from .additional_classes.account import RandomAccount, AccountByName
 from .additional_classes.credit_card import CreditCard

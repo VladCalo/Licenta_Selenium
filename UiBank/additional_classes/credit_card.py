@@ -1,7 +1,7 @@
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
-from Task1.UiBank import constants as const
-from Task1.UiBank.uibank import *
+from UiBank import constants as const
+from UiBank.uibank import *
 
 
 # TODO: Continue CreditCard methods. UiBank Credit Cards section under maintenance!

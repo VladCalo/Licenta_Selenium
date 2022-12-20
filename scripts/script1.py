@@ -1,4 +1,4 @@
-from Task1.UiBank.uibank import UiBank
+from UiBank.uibank import UiBank
 
 with UiBank(teardown=True) as bot:
     bot.landing_page_and_login()
