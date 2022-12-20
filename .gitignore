@@ -3,6 +3,7 @@ geckodriver.log
 
 UiBank/outputs/bot_generated_accounts.txt
 UiBank/outputs/loans.txt
+venv/
 venv/.DS_Store
 venv/pyvenv.cfg
 venv/bin/activate
